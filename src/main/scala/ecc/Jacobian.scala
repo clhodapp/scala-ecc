@@ -8,7 +8,7 @@ class Jacobian(val curve:Curve, _x:BigInt=null, _y:BigInt=null, _z:BigInt=null) 
   val Z = if(_z==null) curve.l else new BigIntMod(_z, curve.q)
   val isIdentity = _y == null
 
-  implicit def this(p:CurvePoint) =     
+  def this(p:CurvePoint) =     
     this(p.curve, p.x, p.y)    
     
   implicit def affine:CurvePoint = {
